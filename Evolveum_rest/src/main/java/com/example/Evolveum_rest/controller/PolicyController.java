@@ -24,6 +24,7 @@ public class PolicyController {
     public List<Policy> getAllPolicies() {
         return policyService.getAllPolicies();
     }
+
     @PostMapping
     public ResponseEntity<String> createPolicy(@RequestBody Policy policy) {
         return policyService.createPolicy(policy);
@@ -34,8 +35,8 @@ public class PolicyController {
         return policyService.updatePolicy(id, updatedPolicy);
     }
 
-    @DeleteMapping("/{policyId}")
-    public ResponseEntity<String> deletePolicy(@PathVariable String policyId) {
-        return policyService.deletePolicy(policyId);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletePolicy(@PathVariable String id) {
+        return policyService.deletePolicy(id);
     }
 }
