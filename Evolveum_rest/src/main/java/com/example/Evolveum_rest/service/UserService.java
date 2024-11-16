@@ -30,9 +30,9 @@ public class UserService {
         Optional<Users> user = userRepo.findById(name);
         if (!user.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("User with name '" + user + "' not found.");
+                    .body("User with name '" + name + "' not found.");
         }
-        return ResponseEntity.ok("User found: '" + user.get()+ "'");
+        return ResponseEntity.ok(user.get().toString());
     }
 
     public ResponseEntity<String> createUser(Users user) {
